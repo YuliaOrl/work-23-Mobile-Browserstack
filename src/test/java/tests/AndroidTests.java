@@ -7,26 +7,26 @@ public class AndroidTests extends TestBase {
     Steps steps = new Steps();
 
     @Test
-    void MobileSearchWordTest() {
+    void mobileSearchWordTest() {
         String searchWord = "Selenide";
 
         steps
              .skipLanguage()
              .searchRequest(searchWord)
-             .VerifyContentFound()
-             .OpenFirstArticle()
-             .CheckContentArticle(searchWord);
+             .verifyContentFound()
+             .openFirstArticle()
+             .checkContentArticle(searchWord);
     }
 
     @Test
-    void MobileSearchPhraseTest() {
+    void mobileSearchPhraseTest() {
         String searchPhrase = "Mobile testing";
 
         steps
              .skipLanguage()
              .searchRequest(searchPhrase)
-             .VerifyContentFound()
-             .OpenRequestArticle(searchPhrase)
-             .CheckContentArticle(searchPhrase);
+             .verifyContentFound()
+             .openRequestArticle(searchPhrase)
+             .checkContentArticle(searchPhrase);
     }
 }

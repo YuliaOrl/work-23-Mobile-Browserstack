@@ -24,26 +24,26 @@ public class Steps {
         return this;
     }
 
-    public Steps VerifyContentFound() {
+    public Steps verifyContentFound() {
         step("Verify content found", () ->
             $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
                     .shouldHave(sizeGreaterThan(0)));
         return this;
     }
 
-    public Steps OpenFirstArticle() {
+    public Steps openFirstArticle() {
         step("Open first found article", () ->
             $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")).first().click());
         return this;
     }
 
-    public Steps OpenRequestArticle(String searchRequest) {
+    public Steps openRequestArticle(String searchRequest) {
         step("Open article by request", () ->
             $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")).findBy(text(searchRequest)).click());
         return this;
     }
 
-    public Steps CheckContentArticle(String searchRequest) {
+    public Steps checkContentArticle(String searchRequest) {
         step("Check content article", () ->
             $(AppiumBy.className("android.widget.TextView")).shouldHave(text(searchRequest)));
         return this;
